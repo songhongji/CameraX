@@ -1,0 +1,50 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+.externalNativeBuild
+
+bin
+gen
+.settings
+.DS_Store
+*Thumbs.db
+*.jar.properties
+build-mira/
+.navigation/
+*.pyc
+push.sh
+
+# gradle.plugin.zsh
+.gradletasknamecache
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+**/musicallyReleaseKey.jks
+# Java class files
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+captures/
+
+# Eclipse User-specific configurations
+.project
+.classpath
+.settings/
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+build/
+/*/build/
