@@ -4,16 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".camera.CameraActivity">
 
     <TextView
-        android:id="@+id/take_photo_tv"
+        android:id="@+id/photo_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:gravity="center"
         android:padding="20dp"
-        android:text="拍摄照片"
+        android:text="拍摄"
         android:textSize="15sp" />
 
+    <ImageView
+        android:id="@+id/photo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
