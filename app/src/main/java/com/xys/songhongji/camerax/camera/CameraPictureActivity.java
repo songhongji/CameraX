@@ -30,7 +30,7 @@ import java.util.Locale;
 /**
  * 单纯的拍摄图片，不需要各种自定义，可以利用intent方式来实现
  */
-public class CameraActivity extends AppCompatActivity {
+public class CameraPictureActivity extends AppCompatActivity {
 
     TextView mPhotoBtn;
     ImageView mImageView;

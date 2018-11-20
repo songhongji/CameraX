@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.xys.songhongji.camerax.camera.CameraActivity;
+import com.xys.songhongji.camerax.camera.CameraPictureActivity;
+import com.xys.songhongji.camerax.camera.CameraVideoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView takePhotoTv;
+    TextView takeVideoTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, CameraActivity.class);
+                intent.setClass(MainActivity.this, CameraPictureActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        takeVideoTv = findViewById(R.id.take_video_tv);
+        takeVideoTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CameraVideoActivity.class);
                 startActivity(intent);
             }
         });

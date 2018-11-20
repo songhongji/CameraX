@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".camera.CameraActivity"></activity>
+        <activity android:name=".camera.CameraPictureActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -32,8 +32,10 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
+
+        <activity android:name=".camera.CameraVideoActivity"></activity>
     </application>
 
 </manifest>
