@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.xys.songhongji.camerax.camera.CameraOneActivity;
 import com.xys.songhongji.camerax.camera.CameraPictureActivity;
 import com.xys.songhongji.camerax.camera.CameraVideoActivity;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView takePhotoTv;
     TextView takeVideoTv;
+    TextView cameraOneTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, CameraVideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cameraOneTv = findViewById(R.id.camera_one_tv);
+        cameraOneTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CameraOneActivity.class);
                 startActivity(intent);
             }
         });

@@ -29,6 +29,7 @@ import java.util.Locale;
 
 /**
  * 单纯的拍摄图片，不需要各种自定义，可以利用intent方式来实现
+ * 通过这种方式，可以不申请拍摄权限
  */
 public class CameraPictureActivity extends AppCompatActivity {
 
