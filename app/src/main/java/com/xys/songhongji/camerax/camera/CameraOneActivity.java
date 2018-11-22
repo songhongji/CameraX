@@ -60,12 +60,6 @@ public class CameraOneActivity extends AppCompatActivity {
                         // get an image from the camera
                         try {
                             mCamera.takePicture(null, null, mPicture);
-                            v.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mCamera.startPreview();
-                                }
-                            }, 1000);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -150,6 +144,13 @@ public class CameraOneActivity extends AppCompatActivity {
             } catch (IOException e) {
                 Log.d(TAG, "Error accessing file: " + e.getMessage());
             }
+
+            previewFl.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mCamera.startPreview();
+                }
+            }, 1000);
         }
     };
 
