@@ -52,13 +52,23 @@ public class CameraOneActivity extends AppCompatActivity {
         previewFl.addView(mPreview);
 
         // Add a listener to the Capture button
-        Button capturePictureButton = (Button) findViewById(R.id.button_capture_picture);
+        final Button capturePictureButton = (Button) findViewById(R.id.button_capture_picture);
         capturePictureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // get an image from the camera
-                        mCamera.takePicture(null, null, mPicture);
+                        try {
+                            mCamera.takePicture(null, null, mPicture);
+                            v.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mCamera.startPreview();
+                                }
+                            }, 1000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
         );
@@ -100,7 +110,7 @@ public class CameraOneActivity extends AppCompatActivity {
             mCamera.lock();         // take camera access back from MediaRecorder
 
             // inform the user that recording has stopped
-            setCaptureButtonText("Capture");
+            setCaptureButtonText("Capture Video");
             isRecording = false;
         } else {
             // initialize video camera
@@ -110,7 +120,7 @@ public class CameraOneActivity extends AppCompatActivity {
                 mMediaRecorder.start();
 
                 // inform the user that recording has started
-                setCaptureButtonText("Stop");
+                setCaptureButtonText("Stop Video");
                 isRecording = true;
             } else {
                 // prepare didn't work, release the camera
