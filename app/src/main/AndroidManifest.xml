@@ -14,7 +14,6 @@
 
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
-
     <uses-feature
         android:name="android.hardware.microphone"
         android:required="true" />
@@ -49,6 +48,7 @@
         <activity
             android:name=".camera.CameraOneActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".camera.CameraTwoActivity"></activity>
     </application>
 
 </manifest>
